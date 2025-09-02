@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Circle Text</h1>
+    <!-- interesting method ngl -->
+
+    <svg width="300" height="300" viewBox="0 0 300 300">
+      <defs>
+        <!-- Define a circular path -->
+        <!-- change this part to change where the circle ends up, which means this part can be animated -->
+        <path
+          id="circlePath"
+          d="M150,150
+     m0,-100
+     a100,100 0 1,1 0,200
+     a100,100 0 1,1 0,-200"
+        />
+      </defs>
+
+      <!-- Text following the path -->
+      <text font-size="20" fill="#2e7d32">
+        <textPath href="#circlePath" startOffset="50%">
+          This text goes around in a circle!
+        </textPath>
+      </text>
+    </svg>
+  </body>
+</html>
