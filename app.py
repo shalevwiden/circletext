@@ -27,3 +27,26 @@ CORS(app, origins=[
 def index():
     # render template looks in template folder by default
     return render_template('index.html')
+
+@app.route("/specsform",methods=["GET","POST"])
+def specsform():
+    return render_template('specsform.html')
+
+@app.route('/circletextoutput')
+def circletextoutput():
+
+    specsdict=dict(
+    maintext=request.form.get('maintext'),
+    repeats=request.form.get('repeats'),
+    )
+    radius=request.form.get('radius')
+
+    outputdiv,textlength=makeoutputdiv(**specsdict)
+
+
+    return render_template('circletext.html',outputdiv=outputdiv)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, use_reloader=True)
+

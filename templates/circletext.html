@@ -9,17 +9,16 @@
     , initial-scale=1.0"
     />
     <title>Document</title>
-    <link rel="stylesheet" href="manual.css" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
   </head>
   <body>
     <div class="sitecontainer">
-      <div class="headingsinfo">
-        <h1>Circle Text Generator</h1>
-        <h3>Aug 29, 2025</h3>
-      </div>
-
       <!--  -->
-
+      {{ outputdiv }}
       <div class="imagediv">
         <img src="images/catmeme.png" alt="" id="image" />
       </div>

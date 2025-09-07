@@ -1,0 +1,12 @@
+$navbackground: #91b1d7;
+$deepnavy: #2552ce;
+@use "../utils/mixins" as *;
+@use "../utils/fonts";
+
+body {
+  @include bodyStyling;
+}
+.formcontainer {
+  @include flexrow;
+  border: 5px solid black;
+}

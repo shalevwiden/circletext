@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="sitecontainer">
+      <div class="topnav">
+        <h1>
+          Circle Text Studio
+          <div id="circle"></div>
+        </h1>
+        <nav class="navlinks">
+          <p>About</p>
+          <p>Examples</p>
+        </nav>
+      </div>
+      <div class="formcontainer">
+        <!-- action means it goes to that url -->
+        <form
+          action="/circletextoutput"
+          method="post"
+          class="specsform"
+          id="circletextform"
+        >
+          <div class="group" id="wordgroup">
+            <p>Enter the word that will be a wave</p>
+            <input
+              type="text"
+              name="userword"
+              placeholder="Enter Word"
+              value="Example"
+            />
+          </div>
+          <input type="hidden" name="source" value="circletextform" />
+        </form>
+        <div class="sideoptions"></div>
+      </div>
+    </div>
+  </body>
+</html>
