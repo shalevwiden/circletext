@@ -1,3 +1,19 @@
 {
-  "liveServer.settings.port": 5505
+  "python.defaultInterpreterPath": "/Users/shalevwiden/Downloads/Coding_Files/Python/flask/flask_virtual/bin/python3",
+
+  "code-runner.executorMap": {
+    "python": "/Users/shalevwiden/Downloads/Coding_Files/Python/flask/flask_virtual/bin/python3"
+  },
+  "liveServer.settings.port": 5501,
+  "liveSassCompile.settings.showOutputWindow": false,
+
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "static/css" // no leading slash
+    }
+  ],
+  "liveSassCompile.settings.includeItems": ["src/scss/**/*.scss"],
+  "liveSassCompile.settings.excludeList": ["**/node_modules/**", "**/_*.scss"]
 }

@@ -1,10 +1,10 @@
-circulartext=' Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat Cat'
+circulartext='Kris Kris Kris'
 print(f'\nLenght of circular text is:\n{len(circulartext)}')
 
-def circularize(text):
+def makeoutputdiv(text):
     spans=''
     for index,letter in enumerate(text):
-        spantemplate=f'<span style="--i: {index}">{letter}</span>\n'
+        spantemplate=f'<span style="--i: {index*1}">{letter}</span>\n'
         spans+=spantemplate
 
 
@@ -16,4 +16,3 @@ def circularize(text):
 '''
     return outputdiv
 
-print(circularize(circulartext))

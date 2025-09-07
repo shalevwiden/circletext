@@ -20,7 +20,7 @@
 }
 
 :root {
-  --lettercount: 96;
+  --lettercount: 14;
   --degreespacing: calc(360deg / var(--lettercount));
   --radius: 150px;
   --fontsize: 20px;
@@ -30,8 +30,8 @@
 $colorone: #bf5700;
 $colortwo: #fff;
 
-$colorone: #d50032;
-$colortwo: #0a0a0a;
+$colorone: #0020d5;
+$colortwo: #2b1b1b;
 
 $animationduration: 5s;
 
@@ -228,7 +228,7 @@ body {
     width: 230px;
     height: auto;
     left: 595px;
-    border-radius: 60px;
+    border-radius: 50%;
     // animation: fancySpin $animationduration linear infinite;
     animation: pulse $animationduration linear infinite;
   }
