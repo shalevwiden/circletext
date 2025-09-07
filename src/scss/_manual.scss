@@ -1,9 +1,20 @@
+@use "../utils/mixins" as *;
+
 :root {
   --lettercount: 14;
   --degreespacing: calc(360deg / var(--lettercount));
   --radius: 150px;
   --fontsize: 20px;
 }
+
+// for UT One
+$colorone: #bf5700;
+$colortwo: #fff;
+
+$colorone: #0020d5;
+$colortwo: #2b1b1b;
+
+$animationduration: 5s;
 
 *,
 *::before,
@@ -18,7 +29,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -41,20 +53,17 @@ body {
   justify-content: flex-start;
   height: 200vh;
   border: 3px solid black;
-  animation: backgroundcolorblock 5s linear infinite;
-}
-.sitecontainer .headingsinfo {
-  background-color: white;
-  width: 100%;
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-}
-.sitecontainer .headingsinfo h3 {
-  color: rgb(57, 57, 225);
+  // animation: backgroundcolorblock 5s linear infinite;
+
+  .headingsinfo {
+    background-color: white;
+    width: 100%;
+    height: 300px;
+    @include flexcol();
+    h3 {
+      color: rgb(57, 57, 225);
+    }
+  }
 }
 
 /*  new idea*/
@@ -62,11 +71,13 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+
   margin-top: 100px;
 }
 
 .circle-text span {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: var(--fontsize);
   font-weight: bold;
   position: absolute;
@@ -74,36 +85,48 @@ body {
   top: 50%;
   transform-origin: 0 var(--radius); /* radius */
   transform: rotate(calc(var(--i) * var(--degreespacing)));
-  animation: spin 5s ease infinite, colorswitch 5s ease infinite;
-}
 
+  animation: spin $animationduration ease infinite,
+    colorswitch $animationduration ease infinite;
+}
 @keyframes spin {
-  0%, 10% {
+  0%,
+  10% {
     transform: rotate(calc(var(--i) * var(--degreespacing)));
   }
-  50%, 60% {
+  50%,
+  60% {
+    // when this goes out of order it makes a crazy animation
     transform: rotate(calc(var(--i) * var(--degreespacing) + 180deg)) scale(1.8);
   }
   100% {
     transform: rotate(calc(var(--i) * var(--degreespacing) + 360deg));
   }
 }
+
 @keyframes colorswitch {
-  0%, 49.99% {
-    color: #0020d5;
+  0%,
+  49.99% {
+    color: $colorone;
   }
-  50%, 100% {
-    color: #2b1b1b;
+  50%,
+  100% {
+    color: $colortwo;
   }
 }
+
+// put this on site container
 @keyframes backgroundcolorblock {
-  0%, 49.99% {
-    background-color: #2b1b1b;
+  0%,
+  49.99% {
+    background-color: $colortwo;
   }
-  50%, 100% {
-    background-color: #0020d5;
+  50%,
+  100% {
+    background-color: $colorone;
   }
 }
+
 .circle-text2 {
   width: 200px;
   height: 200px;
@@ -122,6 +145,7 @@ body {
   animation: spinLetter 5s linear infinite;
 }
 
+// image stuff now
 @keyframes fancySpin {
   0% {
     transform: rotate(0deg);
@@ -148,35 +172,45 @@ body {
     filter: grayscale(0%) contrast(100%) blur(0px);
   }
 }
+
 @keyframes pulse {
-  0%, 10% {
+  0%,
+  10% {
     transform: scale(1);
     filter: contrast(100%);
     fill: rgb(186, 83, 19);
   }
-  10%, 49% {
+  10%,
+  49% {
     fill: rgb(12, 32, 82);
   }
-  50%, 60% {
+  50%,
+  60% {
     transform: scale(1.5);
+
     fill: rgb(17, 71, 30);
   }
+
   100% {
     transform: scale(1);
     filter: contrast(100%);
     fill: rgb(104, 211, 129);
   }
 }
+
 .imagediv {
+  // @include flexcol();
   position: relative;
+
   width: 100%;
+  #image {
+    position: absolute;
+    margin-top: 253px;
+    width: 230px;
+    height: auto;
+    left: 595px;
+    border-radius: 50%;
+    // animation: fancySpin $animationduration linear infinite;
+    animation: pulse $animationduration linear infinite;
+  }
 }
-.imagediv #image {
-  position: absolute;
-  margin-top: 253px;
-  width: 230px;
-  height: auto;
-  left: 595px;
-  border-radius: 50%;
-  animation: pulse 5s linear infinite;
-}/*# sourceMappingURL=manual.css.map */
