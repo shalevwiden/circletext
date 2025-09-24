@@ -12,7 +12,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
-  --lettercount: 14;
+  --lettercount: 15;
   --degreespacing: calc(360deg / var(--lettercount));
   --radius: 150px;
   --fontsize: 20px;
@@ -280,10 +280,44 @@ body {
 }
 
 .formcontainer {
+  width: 90%;
+  height: 700px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 20px;
-  border: 5px solid black;
+  border: 5px solid rgb(208, 30, 30);
+}
+.formcontainer form {
+  width: 50%;
+}
+.formcontainer .sideoptions {
+  width: 40%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 4px solid navy;
+  border-radius: 26px;
+}
+
+#homelink {
+  text-decoration: none;
+  font-weight: bold;
+  width: 90px;
+  height: 50px;
+}
+#homelink #returnhome {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: #2552ce;
+  color: white;
+}
+#homelink #returnhome:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

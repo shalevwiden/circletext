@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/main.css')}}"
+    />
+    <link rel="stylesheet" href="../static/css/main.css" />
   </head>
   <body>
     <div class="sitecontainer">
@@ -26,18 +31,41 @@
           id="circletextform"
         >
           <div class="group" id="wordgroup">
-            <p>Enter the word that will be a wave</p>
+            <p>Enter the word that will be Circle Text</p>
             <input
               type="text"
-              name="userword"
-              placeholder="Enter Word"
-              value="Example"
+              name="maintext"
+              placeholder="Enter some text"
+              value="Example text"
             />
           </div>
+          <div class="group" id="numbersgroup">
+            <p>Enter repeats for the text</p>
+            <input
+              type="number"
+              placeholder="Repeats for the text"
+              name="repeats"
+            />
+            <p>Enter the Radius of the circle</p>
+            <input
+              type="number"
+              placeholder="Repeats for the text"
+              name="repeats"
+            />
+            <p>Make it a semicircle?</p>
+            <input type="checkbox" name="semicircle" />
+          </div>
+          <p>Submit Form</p>
+          <input type="submit" value="Submit Form" />
           <input type="hidden" name="source" value="circletextform" />
         </form>
-        <div class="sideoptions"></div>
+        <div class="sideoptions">
+          <h2>Side Options Div</h2>
+        </div>
       </div>
+      <a href="{{url_for('index')}}" id="homelink"
+        ><button id="returnhome">Return Home</button></a
+      >
     </div>
   </body>
 </html>

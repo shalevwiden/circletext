@@ -2,7 +2,10 @@
 @use "../utils/fonts";
 
 :root {
-  --lettercount: 14;
+  // JavaScript in circletext.html will update this.
+  // I also want to make it dynamic.
+
+  --lettercount: 1;
   --degreespacing: calc(360deg / var(--lettercount));
   --radius: 150px;
   --fontsize: 20px;

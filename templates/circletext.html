@@ -17,11 +17,42 @@
   </head>
   <body>
     <div class="sitecontainer">
-      <!--  -->
-      {{ outputdiv }}
+      <div class="topnav">
+        <h1>
+          Circle Text Studio
+          <div id="circle"></div>
+        </h1>
+        <nav class="navlinks">
+          <p>About</p>
+          <p>Examples</p>
+        </nav>
+      </div>
+      <!-- Heres the output text-->
+      {{ outputdiv | safe}}
       <div class="imagediv">
-        <img src="images/catmeme.png" alt="" id="image" />
+        <img
+          src="{{url_for('static',filename='images/catmeme.png')}}"
+          alt="image not here"
+          id="image"
+        />
       </div>
     </div>
+
+    <script>
+      const semicircle = "{{ 'true' if semicircle else 'false' }}" === "true";
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const el = document.getElementById("outputdiv1");
+        if (el) {
+          const letters = el.querySelectorAll("span").length;
+
+          if (!semicircle) {
+            el.style.setProperty("--lettercount", letters);
+          } else {
+            el.style.setProperty("--lettercount", letters / 2);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
