@@ -12,9 +12,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 :root {
-  --lettercount: 15;
+  --lettercount: 1;
   --degreespacing: calc(360deg / var(--lettercount));
-  --radius: 150px;
+  --radius: 100px;
   --fontsize: 20px;
 }
 
@@ -75,6 +75,7 @@ body {
   height: 200px;
   border-radius: 50%;
   margin-top: 100px;
+  background-color: #eee;
 }
 
 .circle-text span {
@@ -129,9 +130,9 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform-origin: 0 150px; /* radius */
-  transform: rotate(calc(var(--i) * 8.8deg));
-  animation: spinLetter 5s linear infinite;
+  transform-origin: 0 var(--radius); /* radius */
+  transform: rotate(calc(var(--i) * var(--degreespacing)));
+  animation: spin 5s ease infinite, colorswitch 5s ease infinite;
 }
 
 @keyframes fancySpin {

@@ -9,7 +9,7 @@ from datetime import datetime
 import os
 import json
 
-from circularize import makeoutputdiv
+from circularize import makespans
 
 
 app=Flask(__name__)
@@ -51,10 +51,10 @@ def circletextoutput():
     1. Put the text length as a hidden element on the page and read from it with JavaScript. Then use the JS to update the CSS.
     2. update it with python somehow
     '''
-    outputdiv=makeoutputdiv(**specsdict)
+    spans=makespans(**specsdict)
 
 
-    return render_template('circletext.html',outputdiv=outputdiv,semicircle=semicircle)
+    return render_template('circletext.html',spans=spans,semicircle=semicircle)
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 circulartext='Circle Text mf'
 print(f'\nLenght of circular text is:\n{len(circulartext)}')
 
-def makeoutputdiv(maintext,repeats):
+def makespans(maintext,repeats):
     fulltext=maintext*int(repeats.strip())
     spans=''
     for index,letter in enumerate(fulltext):
@@ -10,10 +10,8 @@ def makeoutputdiv(maintext,repeats):
 
 
 
-    outputdiv=f'''
-    <div class="circle-text" id="outputdiv1"> 
+    spans=f'''
         {spans}
-    </div>
 '''
-    return outputdiv
+    return spans
 

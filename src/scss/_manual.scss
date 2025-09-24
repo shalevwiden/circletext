@@ -7,7 +7,7 @@
 
   --lettercount: 1;
   --degreespacing: calc(360deg / var(--lettercount));
-  --radius: 150px;
+  --radius: 100px;
   --fontsize: 20px;
 }
 
@@ -77,6 +77,8 @@ body {
   border-radius: 50%;
 
   margin-top: 100px;
+  background-color: #eee;
+  position: relative; /* important: makes child positioning relative */
 }
 
 .circle-text span {
@@ -144,9 +146,12 @@ body {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform-origin: 0 150px; /* radius */
-  transform: rotate(calc(var(--i) * 8.8deg));
-  animation: spinLetter 5s linear infinite;
+
+  transform-origin: 0 var(--radius); /* radius */
+  transform: rotate(calc(var(--i) * var(--degreespacing)));
+
+  animation: spin $animationduration ease infinite,
+    colorswitch $animationduration ease infinite;
 }
 
 // image stuff now

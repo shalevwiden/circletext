@@ -24,3 +24,5 @@ I've previoiusly used wtf-forms but that feels way too rigid I'm not gonna lie.
 
 Use the | safe to pass html markup into a template.
 Also, for circletext.html, I could just pass a list of spans and then render them.
+
+- make circletext position relative for sure

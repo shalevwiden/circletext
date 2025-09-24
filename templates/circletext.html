@@ -28,29 +28,47 @@
         </nav>
       </div>
       <!-- Heres the output text-->
-      {{ outputdiv | safe}}
-      <div class="imagediv">
-        <img
-          src="{{url_for('static',filename='images/catmeme.png')}}"
-          alt="image not here"
-          id="image"
-        />
+      <div class="circle-text" id="outputdiv1">
+        <div class="imagediv">
+          <img
+            src="{{url_for('static',filename='images/catmeme.png')}}"
+            alt="image not here"
+            id="image"
+          />
+          {{ spans | safe}}
+        </div>
       </div>
+      <a href="{{url_for('index')}}" id="homelink"
+        ><button id="returnhome">Return Home</button></a
+      >
     </div>
 
     <script>
+      //   --degreespacing: calc(360deg / var(--lettercount));
+
       const semicircle = "{{ 'true' if semicircle else 'false' }}" === "true";
 
       document.addEventListener("DOMContentLoaded", () => {
         const el = document.getElementById("outputdiv1");
         if (el) {
+          console.log("Output div present");
+          // python generator is one span per character
           const letters = el.querySelectorAll("span").length;
+
+          let lettercount = semicircle ? letters / 2 : letters;
 
           if (!semicircle) {
             el.style.setProperty("--lettercount", letters);
           } else {
             el.style.setProperty("--lettercount", letters / 2);
           }
+
+          //
+          const degreespacing = `${(360 / lettercount).toFixed(2)}deg`;
+          document.documentElement.style.setProperty(
+            "--degreespacing",
+            degreespacing
+          );
         }
       });
     </script>
