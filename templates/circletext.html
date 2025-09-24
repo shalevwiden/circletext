@@ -29,13 +29,14 @@
       </div>
       <!-- Heres the output text-->
       <div class="circle-text" id="outputdiv1">
+        {{ spans | safe}}
+
         <div class="imagediv">
           <img
             src="{{url_for('static',filename='images/catmeme.png')}}"
             alt="image not here"
             id="image"
           />
-          {{ spans | safe}}
         </div>
       </div>
       <a href="{{url_for('index')}}" id="homelink"
