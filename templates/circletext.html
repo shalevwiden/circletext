@@ -42,8 +42,13 @@
         </div>
       </div>
       <div class="infodiv">
-        <p>Color One {{ colorone }}</p>
-        <p>Color One {{ colorone }}</p>
+        <h3>Specifications</h3>
+        <ul>
+          <p>Color One: {{ colorone }}</p>
+          <p>Color two: {{ colortwo }}</p>
+          <p>Radius : {{radius}}</p>
+          <p>Animation Duration : {{animationduration}}</p>
+        </ul>
       </div>
       <a href="{{url_for('index')}}" id="homelink-circletext"
         ><button id="returnhome">Return Home</button></a
