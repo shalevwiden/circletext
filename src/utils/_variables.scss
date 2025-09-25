@@ -1,0 +1,19 @@
+:root {
+  // JavaScript in circletext.html will update this.
+  // I also want to make it dynamic.
+
+  --lettercount: 1;
+  --degreespacing: calc(360deg / var(--lettercount));
+  --radius: 100px;
+  --fontsize: 20px;
+  --circletextmargin: 300px;
+}
+
+// for UT One
+$colorone: #bf5700;
+$colortwo: #fff;
+
+$colorone: #0020d5;
+$colortwo: #2b1b1b;
+
+$animationduration: 5s;

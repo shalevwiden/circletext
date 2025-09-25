@@ -3,6 +3,9 @@ $deepnavy: #2552ce;
 @use "../utils/mixins" as *;
 @use "../utils/fonts";
 
+:root {
+  --returnhometop: 180px;
+}
 body {
   @include bodyStyling;
 }
@@ -21,7 +24,7 @@ body {
     @include border(navy);
   }
 }
-#homelink {
+#homelink-specsform {
   text-decoration: none;
 
   font-weight: bold;
@@ -29,6 +32,8 @@ body {
   width: 90px;
 
   height: 50px;
+
+  margin-top: var(--returnhometop);
 
   #returnhome {
     width: 100%;
