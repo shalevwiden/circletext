@@ -53,13 +53,14 @@ def circletextoutput():
     spans=makespans(**specsdict)
     full_inputs = dict(
         spans=spans,
-        radius=request.form.get('radius', '150px'),
+        radius=request.form.get('radius'),
         semicircle=request.form.get('semicircle') == 'on',
-        colorone=request.form.get('colorone'),
-        colortwo=request.form.get('colortwo'),
-        animationduration=request.form.get('animationduration')
+        # added defaults
+        colorone=request.form.get('colorone','#045393'),
+        colortwo=request.form.get('colortwo','#fbd08b'),
+        animationduration=f'{request.form.get('animationduration')}s'
     )
-    
+
 
     return render_template('circletext.html',**full_inputs)
 
