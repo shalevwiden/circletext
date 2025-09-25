@@ -325,7 +325,8 @@ body {
 
 .formcontainer {
   width: 90%;
-  height: 700px;
+  height: auto;
+  padding: 30px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -335,6 +336,13 @@ body {
 }
 .formcontainer form {
   width: 50%;
+}
+.formcontainer form input[type=checkbox] {
+  width: 50px;
+  height: 50px;
+}
+.formcontainer form input[type=checkbox]:checked {
+  accent-color: red;
 }
 .formcontainer form .description {
   margin: 10px 0;
