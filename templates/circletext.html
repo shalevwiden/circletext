@@ -36,10 +36,14 @@
         <div class="imagediv">
           <img
             src="{{url_for('static',filename='images/catmeme1.png')}}"
-            alt="image not here"
+            alt=""
             id="image"
           />
         </div>
+      </div>
+      <div class="infodiv">
+        <p>Color One {{ colorone }}</p>
+        <p>Color One {{ colorone }}</p>
       </div>
       <a href="{{url_for('index')}}" id="homelink-circletext"
         ><button id="returnhome">Return Home</button></a
@@ -73,6 +77,20 @@
             degreespacing
           );
         }
+
+        // after form submission
+        document.documentElement.style.setProperty(
+          "--colorone",
+          "{{ colorone }}"
+        );
+        document.documentElement.style.setProperty(
+          "--colortwo",
+          "{{ colortwo }}"
+        );
+        document.documentElement.style.setProperty(
+          "--animationduration",
+          "{{ animationduration }}"
+        );
       });
     </script>
   </body>

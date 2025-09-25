@@ -37,13 +37,12 @@ def specsform():
 def circletextoutput():
 
     specsdict=dict(
+
     maintext=request.form.get('maintext'),
     repeats=request.form.get('repeats'),
     )
-    # do something with radius later
-    radius=request.form.get('radius')
-    # semicircle is a boolean?
-    semicircle = bool(request.form.get("semicircle"))
+    
+    
 
     # I need to pass text length to the css somehow.
     '''
@@ -52,9 +51,17 @@ def circletextoutput():
     2. update it with python somehow
     '''
     spans=makespans(**specsdict)
+    full_inputs = dict(
+        spans=spans,
+        radius=request.form.get('radius', '150px'),
+        semicircle=request.form.get('semicircle') == 'on',
+        colorone=request.form.get('colorone'),
+        colortwo=request.form.get('colortwo'),
+        animationduration=request.form.get('animationduration')
+    )
+    
 
-
-    return render_template('circletext.html',spans=spans,semicircle=semicircle)
+    return render_template('circletext.html',**full_inputs)
 
 
 if __name__ == "__main__":

@@ -16,11 +16,18 @@ body {
   border: 5px solid rgb(208, 30, 30);
   form {
     width: 50%;
+    .description {
+      margin: 10px 0;
+      font-style: italic;
+      font-family: Helvetica, sans-serif;
+    }
   }
   .sideoptions {
     width: 40%;
-    height: 100px;
+    height: 600px;
     @include flexcol;
+    justify-content: flex-start;
+    padding-top: 60px;
     @include border(navy);
   }
 }

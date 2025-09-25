@@ -13,10 +13,11 @@
   <body>
     <div class="sitecontainer">
       <div class="topnav">
-        <h1>
-          Circle Text Studio
-          <div id="circle"></div>
-        </h1>
+        <a href="{{url_for('index')}}"
+          ><h1>
+            Circle Text Studio
+            <div id="circle"></div></h1
+        ></a>
         <nav class="navlinks">
           <p>About</p>
           <p>Examples</p>
@@ -45,16 +46,34 @@
               type="number"
               placeholder="Repeats for the text"
               name="repeats"
+              value="1"
             />
-            <p>Enter the Radius of the circle</p>
+            <p>Enter the Radius of the circle (px)</p>
             <input
               type="number"
               placeholder="Repeats for the text"
               name="repeats"
+              value="150"
             />
             <p>Make it a semicircle?</p>
             <input type="checkbox" name="semicircle" />
           </div>
+
+          <p>Enter color block color one</p>
+          <input type="color" name="colorone" value="#045393ff" />
+
+          <p>Enter colorblock color two</p>
+          <input type="color" name="colortwo" value="#fbd08bff" />
+
+          <p>Enter speed of change (seconds)</p>
+          <input type="number" name="animationduration" value="5" />
+
+          <p class="description">
+            With the specified colors, the circle text alternate between making
+            one the color of the text and one the background. You can change the
+            speed of the alternation with input above
+          </p>
+
           <p>Submit Form</p>
           <input type="submit" value="Submit Form" />
           <input type="hidden" name="source" value="circletextform" />

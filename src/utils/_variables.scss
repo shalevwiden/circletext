@@ -1,19 +1,22 @@
+$default-colorone: #0020d5;
+$default-colortwo: #2b1b1b;
+$default-radius: 100px;
+$default-fontsize: 20px;
+$default-animationduration: 5s;
+
 :root {
   // JavaScript in circletext.html will update this.
   // I also want to make it dynamic.
 
   --lettercount: 1;
   --degreespacing: calc(360deg / var(--lettercount));
-  --radius: 100px;
-  --fontsize: 20px;
   --circletextmargin: 300px;
+
+  --colorone: #{$default-colorone};
+  --colortwo: #{$default-colortwo};
+  --radius: #{$default-radius};
+  --fontsize: #{$default-fontsize};
+  --animationduration: #{$default-animationduration};
 }
 
 // for UT One
-$colorone: #bf5700;
-$colortwo: #fff;
-
-$colorone: #0020d5;
-$colortwo: #2b1b1b;
-
-$animationduration: 5s;
