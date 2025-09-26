@@ -1,5 +1,9 @@
 ## Circle Text Generator
 
+Deployed first draft version to Heroku on Sep 26, 2025
+
+https://circletextgenerator-cc298a3c61ab.herokuapp.com/
+
 Built off Flask, HTML, SASS, and JavaScript.
 
 Flask will be critical to make this operational.
