@@ -117,7 +117,7 @@ body {
   z-index: 1; /* put letters above image */
 
   #image {
-    width: 230px;
+    width: calc(var(--radius)+30px);
     height: auto;
     border-radius: 50%;
     margin: 0;

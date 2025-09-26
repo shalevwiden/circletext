@@ -49,3 +49,16 @@ Later make a way better Nike swoosh animation.
 
 Werkzeug comes with Flask Automatically
 Very interesting stuff
+
+Future update plans:
+Finish background color block.
+Allow change of shape for the image.
+
+Different image animations like spin.
+
+Different layers of circle text.
+
+Start and pause button too.
+
+Enable and disable image and image text animation too.
+Just use JavaScript toggle I think
