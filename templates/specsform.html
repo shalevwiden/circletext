@@ -28,6 +28,7 @@
         <form
           action="/circletextoutput"
           method="post"
+          enctype="multipart/form-data"
           class="specsform"
           id="circletextform"
         >
@@ -59,6 +60,8 @@
             <input type="checkbox" name="semicircle" />
           </div>
 
+          <p>backgroundcolor for the circle text rotates around?</p>
+          <input type="checkbox" name="backgroundcolorblock" />
           <p>Enter color block color one</p>
           <input type="color" name="colorone" value="#045393" />
 
@@ -76,6 +79,10 @@
             one the color of the text and one the background. You can change the
             speed of the alternation with speed input above
           </p>
+
+          <p>Add an image to the animation?</p>
+
+          <input type="file" name="image" accept="image/png, image/jpeg" />
 
           <p>Submit Form</p>
           <input type="submit" value="Submit Form" />

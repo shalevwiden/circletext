@@ -28,13 +28,9 @@
       <!-- Heres the output text-->
       <div class="circle-text" id="outputdiv1">
         {{ spans | safe}}
-
+        <!-- this means there will be no error and just no image -->
         <div class="imagediv">
-          <img
-            src="{{url_for('static',filename='images/catmeme1.png')}}"
-            alt="i"
-            id="image"
-          />
+          <img src="{{imageurl}}" alt="i" id="image" />
         </div>
       </div>
       <div class="infodiv">

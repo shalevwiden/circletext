@@ -1,4 +1,11 @@
-from flask import Flask, render_template, request,flash,redirect,url_for,session
+from flask import Flask, render_template, request,flash,redirect,url_for,send_file
+from io import BytesIO
+from pillow import Image
+from werkzeug.utils import secure_filename
+import uuid, time
+
+
+
 import flask
 from flask_cors import CORS
 
@@ -10,7 +17,7 @@ import os
 import json
 
 from circularize import makespans
-
+UPLOAD_FOLDER = "static/uploads" 
 
 app=Flask(__name__)
 app.secret_key = "keytest" 
@@ -50,6 +57,34 @@ def circletextoutput():
     1. Put the text length as a hidden element on the page and read from it with JavaScript. Then use the JS to update the CSS.
     2. update it with python somehow
     '''
+    
+    imagefile = request.files["image"]
+    def check_deletion():
+        now = time.time()
+        for f in os.listdir(UPLOAD_FOLDER):
+            filepath = os.path.join(UPLOAD_FOLDER, f)
+            if os.path.isfile(filepath):
+                # delete if older than 3600 seconds (1 hour)
+                if now - os.path.getmtime(filepath) > 3600:
+                    os.remove(filepath)
+    check_deletion()
+
+    # Extract extension
+    ext = os.path.splitext(imagefile.filename)[1].lower()  # e.g. ".png" or ".jpg"
+    if ext not in [".png", ".jpg", ".jpeg"]:
+        return "Unsupported file type", 400
+
+    # Generate safe unique filename
+    filename = f"{uuid.uuid4().hex}{ext}"  # keeps proper extension
+    path = os.path.join("static/uploads", filename)
+
+    # Save file
+    imagefile.save(path)
+    
+
+
+    
+
     spans=makespans(**specsdict)
     full_inputs = dict(
         spans=spans,
@@ -58,7 +93,9 @@ def circletextoutput():
         # added defaults
         colorone=request.form.get('colorone','#045393'),
         colortwo=request.form.get('colortwo','#fbd08b'),
-        animationduration=f'{request.form.get('animationduration')}s'
+        animationduration=f'{request.form.get('animationduration')}s',
+        imageurl=path
+        
     )
 
 
