@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="{{url_for('static', filename='css/main.css')}}"
+    <meta
+      name="description"
+      content="See the results of your circle text generation."
     />
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='circletext_favicon.png') }}"
+    />
+    <title>Circle Text Generator Result</title>
+
     <link rel="stylesheet" href="../static/css/main.css" />
   </head>
   <body>
