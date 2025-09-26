@@ -30,7 +30,9 @@
         {{ spans | safe}}
         <!-- this means there will be no error and just no image -->
         <div class="imagediv">
-          <img src="{{imageurl}}" alt="i" id="image" />
+          {% if imageurl %}
+          <img src="{{ imageurl }}" alt="i" id="image" />
+          {% endif %}
         </div>
       </div>
       <div class="infodiv">

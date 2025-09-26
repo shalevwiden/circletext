@@ -44,3 +44,8 @@ border-radius: 30px;
 }
 
 Later make a way better Nike swoosh animation.
+
+### Sep 26, 2025
+
+Werkzeug comes with Flask Automatically
+Very interesting stuff
